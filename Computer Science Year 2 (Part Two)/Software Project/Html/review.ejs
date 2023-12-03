@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--Setting lang for the page-->
+<html lang="en">
+   <head>
+      <!--       character set-->
+      <meta charset="utf-8" />
+      <!--       title for page-->
+      <title>Review</title>
+      <meta name="description" content="My Website" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <!--       linking stylesheet-->
+      <link rel="stylesheet" href="/review.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+      <script src="/review.js"></script>
+   </head>
+   <body>
+      <!--    Grid container   -->
+      <div class = "grid-container">
+         <!--   Sections    -->
+         <div class = navbar>
+            <a href="/">Home</a>
+            <a href="/forum">Forum</a>
+            <div class="search-container">
+               <form action="/search" method="GET">
+                  <input type="text" id="university" placeholder="Search..." name="university" required>
+               </form>
+            </div>
+            <p>Dark mode</p>
+            <label class="switch">
+            <input type="checkbox" checked>
+            <span id = "ColourChanger" class="slider round"></span>
+            </label>
+            <div class="dropdown">
+               <button class="dropbtn">Menu</button>
+               <div class="dropdown-content">
+                  <a href="/signin">Sign in</a>
+                  <a href="/signup">Sign up</a>
+                  <a href="/profile">Profile</a>
+                  <a href="/contact">Contact</a>
+               </div>
+            </div>
+         </div>
+         <div class = university>
+            <div style="height: 200px;"  class = "sections">
+               <img src="/university.png" alt="University Image"> 
+               <% if (universities && universities.length > 0) { %>
+               <% universities.forEach(university => { %>
+               <h1><%= university.Institution %></h1>
+               <p>Overall Score: <%= university.Overall_Score %></p>
+               <% }); %>
+               <% } else { %>
+               <h1>Goldsmith, University of London.</h1>
+               <p >Overall score: 420</p>
+               <% } %>
+            </div>
+         </div>
+         <div class = "academic">
+            <h1 class = "titles">Academic reviews</h1>
+            <div class = "sections">
+               <% if (universities && universities.length > 0) { %>
+               <% universities.forEach(university => { %>
+               <h1>Course</h1>
+               <p><%= university.Institution %> is known for thier courses.</p>
+               <!--  Video     -->
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+               <h2>Course rating <%= university.Graduate_prospects_outcomes %>/100</h2>
+               <% }); %>
+               <% } else { %>
+               <h1>Course</h1>
+               <p>Goldsmith is known for thier courses.</p>
+               <!--  Video     -->
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+               <h2>Course rating 4.0/5</h2>
+               <% } %>
+            </div>
+         </div>
+         <div class = social>
+            <h1 class = "titles">Social Reviews</h1>
+            <div class = "sections">
+               <% if (universities && universities.length > 0) { %>
+               <% universities.forEach(university => { %>
+               <h1>Social</h1>
+               <p><%= university.Institution %> Soceities are well known</p>
+               <!--  Video     -->
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+               <h2>Course rating: <%= university.Research_Intensity %>/5</h2>
+               <% }); %>
+               <% } else { %>
+               <h1>Social</h1>
+               <p>Goldsmith Soceities are well known</p>
+               <!--  Video     -->
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+               <h2>Course rating 4.0/5</h2>
+               <% } %>
+            </div>
+         </div>
+         <div class = "transport">
+            <div class = "sections">
+               <% if (universities && universities.length > 0) { %>
+               <% universities.forEach(university => { %>
+               <h1>Transportation</h1>
+               <p><%= university.Institution %> is fairly easy to access</p>
+               <!--  Video     -->
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+               <h2>Course rating: <%= university.Research_Quality %>/5</h2>
+               <% }); %>
+               <% } else { %>
+               <h1>Transportation</h1>
+               <p>Goldsmith has one of the best Transportation.</p>
+               <!--  Video     -->
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+               <h2>Course rating 4.2/5</h2>
+               <% } %>
+            </div>
+         </div>
+         <div class = "modules">
+            <div class = "sections">
+               <% if (universities && universities.length > 0) { %>
+               <% universities.forEach(university => { %>
+               <h1>Modules</h1>
+               <p><%= university.Institution %> has one of the best modules</p>
+               <!--  Video     -->
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+               <h2>Course rating <%= university.Academic_Services_Spend %>/10000</h2>
+               <% }); %>
+               <% } else { %>
+                  <h1>Modules</h1>
+                  <p>Goldsmith has one of the best modules</p>
+                  <!--  Video     -->
+                  <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+                  <h2>Course rating 4.2/5</h2>
+               <% } %>
+            </div>
+         </div>
+         <div class = "Lecture">
+            <div class = "sections">
+               <% if (universities && universities.length > 0) { %>
+               <% universities.forEach(university => { %>
+               <h1>Lectures</h1>
+               <p>The best lectures come to teach at <%= university.Institution %></p>
+               <!--  Video     -->
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+               <h2>Course rating <%= university.Research_Quality %>/5</h2>
+               <% }); %>
+               <% } else { %>
+                  <h1>Lectures</h1>
+                  <p>The best lectures come to teach at Goldsmith.</p>
+                  <!--  Video     -->
+                  <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+                  <h2>Course rating 3.5/5</h2>
+               <% } %>
+            </div>
+         </div>
+         <div class = "crime">
+            <div class = "sections">
+               <% if (universities && universities.length > 0) { %>
+               <% universities.forEach(university => { %>
+               <h1>Crime</h1>
+               <p><%= university.Institution %> has low crime rates.</p>
+               <!--  Video     -->
+               <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+               <h2>Course rating <%= university.Degree_Completion %>/100</h2>
+               <% }); %>
+               <% } else { %>
+                  <h1>Crime</h1>
+                  <p>Goldmsith has low crime rates.</p>
+                  <!--  Video     -->
+                  <iframe width="300" height="200" src="https://www.youtube.com/embed/yaIZktSuIQY"> </iframe>
+                  <h2>Course rating 3.9/5</h2>
+               <% } %>
+            </div>
+         </div>
+         <div class = "review">
+            <h1 class = "titles">All Reviews</h1>
+            <div class = "sections">
+               <h1>Anonymous</h1>
+               <p>Going to Goldsmith was the greatest desicion I made.</p>
+               <!--  You will notice I put header class's here to change them to bold text headers   -->
+               <p class = "h2">Rating 5/5</p>
+               <br>
+               <p class = "h3">Tommy</p>
+               <p>I had a pretty good experience with Goldmsith</p>
+               <p class = "h4">Course Rating 4.0/5</p>
+            </div>
+            <div class = "sections">
+               <h1>Sarah</h1>
+               <p>Goldsmith has the best lecturers. They were very helpful</p>
+               <!--  You will notice I put header class's here to change them to bold text headers   -->
+               <p class = "h2">Lecturers rating 5/5</p>
+               <br>
+               <p class = "h3">John</p>
+               <p>It was very easy for me to come to Goldmsith, There are plenty of buses going around.</p>
+               <p class = "h4">Course Rating 4.0/5</p>
+            </div>
+            <% if (reviews && reviews.length > 0) { %>
+            <% reviews.forEach(review => { %>
+            <div class="sections">
+               <h1><%= review.username %></h1>
+               <p class="h2">Lecture rating: <%= review.lecture_rating %>/5</p>
+               <p><%= review.comment %></p>
+               <p class="h4">Course rating: <%= review.course_rating %>/5</p>
+            </div>
+            <% }); %>
+            <% } else { %>
+            <% } %>
+         </div>
+         <div class = "write">
+            <div class = "sections">
+               <h1 class = "titles">Write a review</h1>
+               <form action="/post" method="post">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" required><br><br>
+                  <label for="name">Lecture Rating</label>
+                  <input type="number" id="name" name="lecture" min="1" max="5" required><br><br>
+                  <label for="name">Course Rating</label>
+                  <input type="number" id="name" name="course" min="1" max="5" required><br><br>
+                  <label for="text">Review</label>
+                  <textarea id="text" name="review" rows="4" cols="50" required></textarea>
+                  <input type="submit" value="Submit"> <br>
+               </form>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,9 @@
+Describe your tournament design here. Please don't write more than 250 words.
+
+Run Tournament function:
+
+This function runs a tournament and determines the winner. It creates two ArrayLists, one for groups of teams and another for individual teams. It loops through a squads array, adding teams to the team ArrayList until it reaches a multiple of 4, at which point it adds the team ArrayList to the groups ArrayList. It then uses the getGroupWinner function to determine the winner of each group and compares the averages of the two winning teams to determine the overall tournament winner, which is then printed.
+
+Get Group winner function:
+
+This function takes in an ArrayList of Team objects and returns the team with the highest average score. It starts by setting the winning team as the first team in the group ArrayList. It then generates two random integers, luckFirstBonus and luckSecondBonus, as a way to introduce randomness into the comparison of team averages. The function then loops through the group ArrayList, comparing the team averages with the added randomness, and updates the winning team if a team with a higher average is found. It then returns the winning team.

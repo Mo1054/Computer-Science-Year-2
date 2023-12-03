@@ -1,0 +1,261 @@
+
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #505050;
+}
+
+/* Applying grid layout to the different sections in the grid layout  */
+
+.navbar {
+
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-gap: 2rem;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+
+
+table {
+    font-size: 14px;
+    max-width: 70%; /* set the table width to 80% of the container */
+    margin: 0 auto; /* center the table horizontally */
+    border-collapse: collapse; /* remove the borders between cells */
+    background-color: #F5F5F5 ;
+    overflow: hidden;
+    color: #333333;
+    margin-bottom: 150px;
+    border-radius: 20px;
+    overflow-y: scroll;  
+
+  }
+
+
+
+
+  
+  th, td {
+    padding: 10px; /* add some padding to cells */
+    border: 1px solid #666666; /* add a light gray border to cells */
+    text-align: left; /* align text to left */
+
+  }
+  
+  th {
+    background-color: #2F2F2F; 
+    color: white;
+    cursor: pointer;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+
+
+
+
+/* css for nav bar */
+
+.navbar a{
+ 
+    text-decoration: underline;
+    font-weight: bold;
+    align-self: center;
+    color: #505050;
+}
+
+
+/*  CSS for the input on the search bar*/
+input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+    background-color: grey;
+    color: black;
+    width: 500px;
+    height: 50px;
+  }
+
+  /* CSS for the placeholders inside inputs */
+::placeholder {
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+
+
+ /* css for drop down menu */
+
+ .dropbtn {
+    background-color: grey;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: grey;
+  }
+
+
+   /*CSS for the button */
+   .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-top: 10px;
+    margin-right: auto;
+  }
+ 
+  /* CSS for the button */
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+ 
+  /* CSS for the buton */
+ 
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+ 
+  /* CSS for the button*/
+ 
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+ 
+ 
+  /* CSS for the button */
+ 
+  input:checked + .slider {
+    background-color: black;
+  }
+ 
+  /*  CSS for the button*/
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+ 
+  /* CSS for the button */
+ 
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+ 
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+ 
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+   /* Layout for the website if dark mode button is clicked */
+
+
+   .dark, .dark .university .sections, .dark .navbar a {
+
+    background: #202020;
+   }
+
+   .dark .sections, .dark a, .dark .dropbtn {
+
+    background-color: #303030;
+    color: #F5F5F5;
+   }
+
+   .dark .navbar{
+
+    color: #F5F5F5;
+
+   }
+
+   .dark .grid-container {
+
+    color: #F5F5F5;
+
+   }
+
+
+   footer {
+    width: 100%;
+    height: 100px;
+    line-height: 60px;
+    text-align: center;
+    background-color: #333333;
+ }
+
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+  }
+  
+  
+.dark .h1{
+color: white;
+}

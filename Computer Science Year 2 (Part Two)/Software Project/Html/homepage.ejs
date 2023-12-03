@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/home.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="/review.js"></script>
+        <title>University Ranking Site</title>
+    </head>
+    <body id="a1">
+      <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/forum">Forum</a>
+        <a href="/review">Reviews</a>
+        <div class="search-container">
+           <form action="/search" method="GET">
+              <input type="text" id="university" placeholder="Search..." name="university" required>
+           </form>
+        </div>
+        <p>Dark mode</p>
+        <label class="switch">
+        <input type="checkbox" checked>
+        <span id="ColourChanger" class="slider round"></span>
+        </label>
+        <div class="dropdown">
+           <button class="dropbtn">Menu</button>
+           <div class="dropdown-content">
+              <a href="/signin">Sign in</a>
+              <a href="/signup">Sign up</a>
+              <a href="/profile">Profile</a>
+              <a href="/contact">Contact</a>
+           </div>
+        </div>
+      </div> <!-- close navbar div -->
+      <br>
+      <br>
+      <h1>University Rankings</h1>
+      <table>
+        <thead>
+            <thead>
+              <tr>
+                <th><a href="/sort/Ranks/asc"><button class="up-arrow-button">&#9650;</button></a>Rank<a href="/sort/Ranks/dsc"><button class="down-arrow-button">&#9660;</button></a></th>
+                <th><a href="/sort/Institution/asc"><button class="up-arrow-button">&#9650;</button></a>University<a href="/sort/Institution/dsc"><button class="down-arrow-button">&#9660;</button></a></th>
+                <th><a href="/sort/Student_Satisfaction/asc"><button class="up-arrow-button">&#9650;</button></a>Student Satisfaction<a href="/sort/Student_Satisfaction/dsc"><button class="down-arrow-button">&#9660;</button></a></th>
+                <th><a href="/sort/Academic_Services_Spend/asc"><button class="up-arrow-button">&#9650;</button></a>Academic Services Spend<a href="/sort/Academic_Services_Spend/dsc"><button class="down-arrow-button">&#9660;</button></a></th>
+                <th><a href="/sort/Facilities_Spend/asc"><button class="up-arrow-button">&#9650;</button></a>Facilities Spend<a href="/sort/Facilities_Spend/dsc"><button class="down-arrow-button">&#9660;</button></a></th>
+                <th><a href="/sort/Degree_Completion/asc"><button class="up-arrow-button">&#9650;</button></a>Degree Completion<a href="/sort/Degree_Completion/dsc"><button class="down-arrow-button">&#9660;</button></a></th>
+                <th><a href="/sort/Overall_Score/asc"><button class="up-arrow-button">&#9650;</button></a>Overall Score<a href="/sort/Overall_Score/dsc"><button class="down-arrow-button">&#9660;</button></a></th>              
+              </tr>
+            </thead>
+        <tbody>
+          <% universities.forEach(function(university) { %>
+            <tr>
+              <td><%= university.Ranks %></td>
+              <td><%= university.Institution %></td>
+              <td><%= university.Student_Satisfaction %></td>
+              <td><%= university.Academic_Services_Spend %></td>
+              <td><%= university.Facilities_Spend %></td>
+              <td><%= university.Degree_Completion %></td>
+              <td><%= university.Overall_Score %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <footer>
+        <p>&copy; 2023 University Rankings Group Project</p>
+      </footer>
+
+ 

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <title>Forum</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="forum.css" />
+      <script src="/review.js"></script>
+   </head>
+
+   <body>
+    <div class = "grid-container">
+        <header>
+            <div class = navbar>
+                <a href="/">Home</a>
+                <a href="/forum">Forum</a>
+                <div class="search-container">
+                   <form action="/search" method="GET">
+                      <input type="text" id="university" placeholder="Search..." name="university" required>
+                   </form>
+                </div>
+                <p>Dark mode</p>
+                <label class="switch">
+                <input type="checkbox" checked>no
+                <span id = "ColourChanger" class="slider round"></span>
+                </label>
+                <div class="dropdown">
+                   <button class="dropbtn">Menu</button>
+                   <div class="dropdown-content">
+                      <a href="/signin">Sign in</a>
+                      <a href="/signup">Sign up</a>
+                      <a href="/profile">Profile</a>
+                      <a href="/contact">Contact</a>
+                   </div>
+                </div>
+             </div>
+
+        </header>
+
+        <main>
+            <div class = "container">
+                   <% forum.forEach(forum => { %>
+                    <div class = "sections">
+                      <div class="threads_header">
+                         <h1><%= forum.topic_title %></h1>
+                     </div>
+                     <div class="threads_user">
+                         <!-- User icon-->
+                         <a href=""> <img scr="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="" width="" height=""> </a>
+                         <!-- User name-->
+                         <a href=""> <%= forum.username %> </a>
+                     </div>
+                     <div class="threads_body">
+                         <!--  User comments     -->
+                         <p><%= forum.post_content %> </p>
+                     </div>
+                    </div>
+                  <% }) %> 
+             </div>
+
+             <div class = "write">
+               <div class = "sections">
+                  <h1 class = "titles">Post on forum</h1>
+                  <form action="/thread" method="post">
+                     <label for="name">First name</label>
+                     <input type="text" id="name" name="firstname" required><br><br>
+                     <label for="name">Surname</label>
+                     <input type="text" id="name" name="surname" required><br><br>
+
+                     <label for="name">Username</label>
+                     <input type="text" id="name" name="username" required><br><br>
+
+                     <label for="name">Topic Title</label>
+                     <input type="text" id="name" name="topic" required><br><br>
+
+
+                     <label for="text">Review</label>
+                     <textarea id="text" name="review" rows="4" cols="50" required></textarea>
+
+                     <input type="submit" value="Submit"> <br>
+                  </form>
+               </div>
+            </div>
+
+            <div class="pag_center">
+              <div class="pagination">
+                <a href="£">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&raquo;</a>
+              </div>
+            </div>
+        </main>
+    </div>
+   </body>
+</html>

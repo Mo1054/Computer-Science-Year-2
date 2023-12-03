@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<title>The Thirsty Student</title>
+</head>
+<body>
+<h1>About The Thirsty Student Shop</h1>
+<p>We sell all sorts of drinks</p>
+
+<h2>Shops</h2>
+<ul>
+    <% for(let i = 0; i < shop.length; i++) { %>
+        <li><%= shop[i].address %> - <%= shop[i].manager %></li>
+        <% } %>
+</ul>
+
+</body>
+</html>
