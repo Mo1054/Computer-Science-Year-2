@@ -82,7 +82,7 @@ module.exports = function(app, forumData) {
         return renderAddNewPost(res, initialvalues, "") 
     });
 
-    // Helper function to 
+    // Helper function to redirect
     function renderAddNewPost(res, initialvalues, errormessage) {
         let data = Object.assign({}, forumData, initialvalues, {errormessage:errormessage});
         console.log(data)
